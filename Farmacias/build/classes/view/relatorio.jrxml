@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="03e49591-9531-4502-b25f-05f2b42bc505">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     medicamento."id" AS medicamento_id,
+     medicamento."fornecedor" AS medicamento_fornecedor,
+     medicamento."lote" AS medicamento_lote,
+     medicamento."nome" AS medicamento_nome,
+     medicamento."unidade" AS medicamento_unidade,
+     medicamento."validade" AS medicamento_validade,
+     medicamento."quantidade" AS medicamento_quantidade
+FROM
+     "public"."medicamento" medicamento]]>
+	</queryString>
+	<field name="medicamento_id" class="java.lang.Integer"/>
+	<field name="medicamento_fornecedor" class="java.lang.String"/>
+	<field name="medicamento_lote" class="java.lang.String"/>
+	<field name="medicamento_nome" class="java.lang.String"/>
+	<field name="medicamento_unidade" class="java.lang.String"/>
+	<field name="medicamento_validade" class="java.lang.String"/>
+	<field name="medicamento_quantidade" class="java.lang.Integer"/>
+	<group name="medicamento_id">
+		<groupExpression><![CDATA[$F{medicamento_id}]]></groupExpression>
+	</group>
+	<group name="medicamento_nome">
+		<groupExpression><![CDATA[$F{medicamento_nome}]]></groupExpression>
+	</group>
+	<group name="medicamento_validade">
+		<groupExpression><![CDATA[$F{medicamento_validade}]]></groupExpression>
+	</group>
+	<group name="medicamento_quantidade">
+		<groupExpression><![CDATA[$F{medicamento_quantidade}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
